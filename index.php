@@ -437,6 +437,9 @@
     </div>
   </section> -->
 
+  <?php 
+    require_once "./announcement.php";
+  ?>
 
   <section class="text-center">
     <div class="container">
