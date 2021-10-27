@@ -261,7 +261,7 @@
       <div class="m-b-50" style="text-align: center;">
         <!-- <img style="width: 90px; margin-bottom: 5vh; " class="text-center" src="./assets/images/contact_us_icon.png"
           alt=""> -->
-        <p class="text section-heading h1" style=" color: #4169E1; font-weight: normal;"> <big> <b style="border-bottom: 2px solid #4169E1;">Become Our Partner</b> </big></p>
+        <p class="text section-heading h1" style=" color: #4169E1; font-weight: normal;"><big><b style="border-bottom: 2px solid #4169E1;">Become Our Partner</b></big></p>
         <p class="text-small" ></p>
       </div>
       <div class="row">
@@ -387,8 +387,8 @@
               <!-- <div class="form-group col-md-2"></div>
               <div class="form-group col-md-2 button-center"> -->
                 <div class="form-group">
-                  <button class="btn signin" type="submit" style="background-color: #4169E1; color:#fff; position:relative; top:-69px;left:15px;"
-                    onclick="setColor(event)"><i class="fas fa-book"></i>&nbsp;Download Brochure</button>
+                  <button class="btn signin" type="button" style="background-color: #4169E1; color:#fff; position:relative; top:-69px;left:15px;"
+                    onclick="setColor(event)"><a style="color:#fff" href="./assets/ACM-USICT-GGSIP_XAI-IoT_Dr.UKose.pdf"><i class="fas fa-book"></i>&nbsp;Download Brochure</a></button>
              
 
                 
