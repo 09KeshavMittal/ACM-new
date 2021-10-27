@@ -9,7 +9,6 @@
     <link href='./assets/CSS/styles.css' rel="stylesheet" />
     <link href='./assets/CSS/glider.css' rel="stylesheet" />
     <link href='./assets/CSS/footer.css' rel="stylesheet" />
-    
     <style>
       @media (min-width: 0px) and (max-width: 500px) {
         section {
@@ -195,9 +194,9 @@
 
   <!-- ====================================Announcement============================================= -->
 
-  <section class="announcement">
+  <!-- <section class="announcement">
     <h1 class="section-heading announce">Announcements</h1>
-    <div class="container-fluid text">
+    <div class="container-fluid text"> -->
       <!-- <div class="swiper-container"> -->
         <!-- <div class="swiper-wrapper"> -->
 
@@ -205,7 +204,7 @@
           
 
           <!-- <div class="swiper-slide"> -->
-            <div class="det">
+            <!-- <div class="det">
               <div class="heading">
                 <h1>
                    ACM USICT Summer Internship
@@ -229,16 +228,16 @@
 
                       <br>Please note that the form is open for all courses of USICT
                     </p>
-                    <div style="display: flex;justify-content: space-evenly;">
+                    <div style="display: flex;justify-content: space-evenly;"> -->
                       <!-- <a target="_blank" href="http://bit.do/ReactNativeWorkshop"><button
                           class="btn announce-button-one" style="background-color:#2250fc">
                           <span style="color:#fff; font-size:0.9rem">REGISTER NOW</span>
                         </button>
                       </a> -->
-                      <a target="_blank"
+                      <!-- <a target="_blank"
                         href="./summerinternship/index.php"><button class="btn"
                           style="background-color:#2250fc">
-                          <span style="color:#fff; font-size:0.9rem">REGISTER NOW</span>
+                          <span style="color:#fff; font-size:0.9rem">View Details</span>
                         </button>
                       </a>
                     </div>
@@ -248,9 +247,9 @@
                 </div>
                 <div class="col-md-5 list">
 
-                  <img class="imag imag_trell" src="./assets/images/Summer Internship 2021.jpeg" alt="">
+                  <img class="imag imag_trell" src="./assets/images/Summer Internship 2021.jpeg" alt=""> -->
 
-                </div>
+                <!-- </div> -->
 
               <!-- </div> -->
 
@@ -300,7 +299,7 @@
               </div>
             </div>
 
-          </div> -->
+          </div>
 
           <!-- <div class="swiper-slide">
             <div class="det">
@@ -398,28 +397,26 @@
                           <span style="color:#fff; font-size:0.9rem">PREVIOUS SESSIONS</span>
                         </button>
                       </a>
-
                     </div>
                   </div>
                 </div>
                 <div class="col-md-5 list">
                   <img class="imag" src="./assets/images/algorithm-sessions.jpg" alt="" width="100%">
                 </div>
-              </div>
- -->
+              </div> -->
 
-
+<!-- 
             </div>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
+        <!-- <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-prev"></div> -->
       </div>
-    </div>
-  </section>
+    </div> -->
+  <!-- </section> -->
 
-<!-- ***************Blogs************** -->
+<!-- ******************************************Blogs******************************************* -->
 
   <script>
     function readMoreRedirection(id) {
@@ -427,7 +424,20 @@
       window.document.location = "./singleBlog.php?Id="+id; //Connecting Second page
     }
   </script>
-  
+
+  <!-- <section class="announcement">
+    <h1 class="section-heading announce">Announcements</h1>
+    <div class="container-fluid text">
+      <div class="swiper-container swiper-container-horizontal">
+        <div class="swiper-wrapper" id="allAnnouncements"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section> -->
+
+
   <section class="text-center">
     <div class="container">
       <h2 class="display-4 font-weight-bold my-3">Recent Blogs</h2>
@@ -444,11 +454,11 @@
     var rwBlogs = document.getElementById("threeBlogsRow");
     rwBlogs.innerHTML = "";
 
-    let url = "./admin/blogAdmin/api.php/?q=readHome"
+    let url1 = "./admin/blogAdmin/api.php/?q=readHome"
 
     $(document).ready(function(){
       $.ajax({
-        url: url,
+        url: url1,
         method: "GET",
         dataType: "JSON",
         success: function(data){
@@ -481,17 +491,80 @@
     });
   </script>
 
-  <!--  **********************EVENTS****************-->
+  <script>
+    var allAnn = document.getElementById("allAnnouncements");
+    allAnn.innerHTML = "";
+
+    let url = "./admin/blogAdmin/api.php/?q=readAllAnnouncements";
+
+    $(document).ready(function(){
+      $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "JSON",
+        success: function(data){
+          console.log("all announcements",data);
+            data.forEach(myfunc1);
+            function myfunc1(row, index) {
+              allAnn.innerHTML += "<div class='swiper-slide'>\
+            <div class=det>\
+              <div class=heading>\
+                <h1>\
+                  <span class=badge>\
+                    <span class=badge-wrap>\
+                      <span class=badge-icon><svg height=14 viewBox=0 0 14 14 width=14 xmlns=http://www.w3.org/2000/svg>\
+                          <path d=M7 2.333c2.577 0 4.667 2.09 4.667 4.667S9.577 11.667 7 11.667 2.333 9.577 2.333 7 4.423 2.333 7 2.333zm0 1.05c-1.997 0-3.617 1.62-3.617 3.617 0 1.997 1.62 3.617 3.617 3.617 1.997 0 3.617-1.62 3.617-3.617 0-1.997-1.62-3.617-3.617-3.617z>\
+                          </path>\
+                        </svg><span class=badge-icon-inner><svg aria-hidden=true focusable=false viewbox=0 0 14 28>\
+                            <path d=M7 9.567c1.418 0 2.567-1.15 2.567-2.567 0-1.418-1.15-2.567-2.567-2.567-1.418 0-2.567 1.15-2.567 2.567 0 1.418 1.15 2.567 2.567 2.567z>\
+                            </path>\
+                          </svg></span></span><span class=badge-text>LIVE</span>\
+                    </span>\
+                  </span>Session On React Native</h1>\
+              </div>\
+              <div class='row det-row'>\
+                <div class='col-md-7 divide'>\
+                  <div class=detai>\
+                    <p>Greetings everyone!!!<br>\
+                    </p>\
+                    <div style=display: flex;justify-content: space-evenly;>\
+                      <a target=_blank href=http://bit.do/ReactNativeWorkshop>\
+                        <button class='btn announce-button-one' style=background-color:#2250fc>\
+                          <span style=color:#fff; font-size:0.9rem>REGISTER NOW</span>\
+                        </button>\
+                      </a>\
+                      <a target=_blank href=https://youtube.com/playlist?list=PLgPSSnf8lP5CubPwhgIk9n4FUhFN5nc3L><button class=btn style=background-color:#2250fc>\
+                          <span style=color:#fff; font-size:0.9rem>VIEW RESOURCES</span>\
+                        </button>\
+                      </a>\
+                    </div>\
+                  </div>\
+                </div>\
+                <div class='col-md-5 list'>\
+                  <img class='imag imag_trell' src=./assets/images/ReactNative.png alt=Nothing>\
+                </div>\
+              </div>\
+            </div>\
+          </div>"
+            }
+          }
+        });
+      });
+
+ 
+  </script>
+
+  <!--  *******************************************************************EVENTS*********************************************-->
 
 
   <section class="event-sec">
     <div class="container events">
       <img src="./assets/images/events.png" style="width: 90px;margin-bottom: 5vh;" alt="">
       <h1 class="section-heading announce">Events & Announcements</h1>
-      <!-- ***************EVENT ARD******************  -->
+      <!-- ********************************************EVENT ARD***************************************************  -->
       <div class="wrapper">
         <div class="link_wrapper">
-          <a href="./events/index.html">Know More!</a>
+          <a href="./events.php">Know More!</a>
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
               <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
@@ -503,7 +576,7 @@
   </section>
 
 
-  <!--**********************TEAM***************-->
+  <!--*******************************************************************TEAM******************************************-->
   <section>
     <div class="container-fluid teams" id="team">
       <img src="./assets/images/31-317832_our-team-old-oak-housing-apartment-clip-art.png" style="width:80px;" alt="">
@@ -696,7 +769,7 @@
 
   </section>
 
-  <!--*********************Get In touch***************-->
+  <!--************************************************************Get In touch******************************************-->
   <section id="contact" class="background-grey"
     style="background-color: white;background-image: url('./assets/images/left_bg.png')">
     <div class="container">
@@ -740,15 +813,10 @@
                 class="form-control form-input-boxes-manual required" placeholder="Message" style="color: grey;"
                 aria-required="true"></textarea>
             </div>
-            <div class="row">
-              <div class="form-group col-md-6"></div>
-              <div class="form-group col-md-2"></div>
-              <div class="form-group col-md-2 button-center">
-                <div class="form-group">
-                  <button class="btn signin" type="submit" style="background-color: #4169E1; color:#fff;"
-                    onclick="setColor(event)"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
-
-                </div>
+            <div class="d-flex justify-content-end">
+              <div class="justify-content-center align-items-center">
+                <button class="btn" type="submit" style="background-color: #4169E1; color:#fff; margin-right:10px"
+                  onclick="setColor(event)"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
               </div>
             </div>
           </form>
@@ -762,9 +830,8 @@
 
   <section style="background-color: #fff; background-image: url('./assets/images/right_up.png'); height:20%; ">
     <div class="container">
-      <div class="row">
+      <div class="row d-flex justify-content-center">
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-
           <div class="text-center">
             <div class="f-icon"><a href="https://facebook.com/acmusict" target="_blank"><i
                   class="fa fa-4x fa-facebook-square"></i></a>
@@ -777,8 +844,7 @@
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-          <br>
-          <div class="text-center" style="margin-top: -20px;">
+          <div class="text-center">
             <div class="l-icon"><a href="https://linkedin.com/company/acmusict" target="_blank"><i
                   class="fab fa-4x fa-linkedin"></i></a></div>
             <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="200"
@@ -789,8 +855,7 @@
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-
-          <div class="text-center" style="margin-top: 5px;">
+          <div class="text-center">
             <div class="i-icon"><a href="https://instagram.com/acmusict" target="_blank"><i
                   class="fa fa-4x fa-instagram"></i></a></div>
             <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="180"
@@ -800,34 +865,83 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+        <!-- <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+          <div class="text-center">
+            <div class="c-icon"><a href="https://discord.gg/3Z5mJMCWEa" target="_blank"><i class="fab fa-4x fa-discord"></i></a></div>
+            <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="100"
+                data-from="0" data-target="100" data-seperator="true">300+</span> </div>
+            <div class="seperator seperator-small"></div>
+            <p class="follower-count">Discord</p>
+          </div>
+        </div> -->
 
-          <div class="text-center" style="margin-top: 5px;">
-            <div class="c-icon"><a href="#"><i class="fa fa-4x fa-child"></i></a></div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+          <div class="text-center">
+            <div class="c-icon"><a href="./index.php"><i class="fa fa-4x fa-child"></i></a></div>
             <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="100"
                 data-from="0" data-target="100" data-seperator="true">1000+</span> </div>
             <div class="seperator seperator-small"></div>
             <p class="follower-count">Connected Students</p>
           </div>
         </div>
+
+        <!-- <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+          <div class="text-center">
+            <div class="f-icon"><a href="https://facebook.com/acmusict" target="_blank"><i
+                  class="fa fa-4x fa-facebook-square"></i></a>
+            </div>
+            <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="700"
+                data-from="0" data-target="700" data-seperator="true">700</span> </div>
+            <div class="seperator seperator-small"></div>
+            <p class="follower-count">Facebook Likes</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+          <div class="text-center">
+            <div class="l-icon"><a href="https://linkedin.com/company/acmusict" target="_blank"><i
+                  class="fab fa-4x fa-linkedin"></i></a></div>
+            <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="200"
+                data-from="0" data-target="200" data-seperator="true">1000</span> </div>
+            <div class="seperator seperator-small"></div>
+            <p class="follower-count"> LinkedIn Reach</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+          <div class="text-center">
+            <div class="i-icon"><a href="https://instagram.com/acmusict" target="_blank"><i
+                  class="fa fa-4x fa-instagram"></i></a></div>
+            <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="180"
+                data-from="0" data-target="205" data-seperator="true">300+</span> </div>
+            <div class="seperator seperator-small"></div>
+            <p class="follower-count">Instagram Followers</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+          <div class="text-center">
+            <div class="c-icon"><a href="https://discord.gg/3Z5mJMCWEa" target="_blank"><i class="fab fa-4x fa-discord"></i></a></div>
+            <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="100"
+                data-from="0" data-target="100" data-seperator="true">300+</span> </div>
+            <div class="seperator seperator-small"></div>
+            <p class="follower-count">Discord</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
+          <div class="text-center">
+            <div class="c-icon"><a href="./index.php"><i class="fa fa-4x fa-child"></i></a></div>
+            <div class="counter"> <span class="count" data-speed="3000" data-refresh-interval="50" data-to="100"
+                data-from="0" data-target="100" data-seperator="true">1000+</span> </div>
+            <div class="seperator seperator-small"></div>
+            <p class="follower-count">Connected Students</p>
+          </div>
+        </div> -->
       </div>
     </div>
   </section>
-<style>
-body {
-	background-color: #3498db;
-	color: #ecf0f1;
-}
 
-.back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: none;
-}
-
-</style>
-<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button" style="background-color: #4169e1; color: #fff; border-radius: 50%;"><i class="fas fa-arrow-up"></i></a>
 
  <!-- ==================================Footer==================================== -->
  <?php
@@ -835,23 +949,7 @@ body {
     ?>
   <script src="./assets/JS/glider.js"></script>
   <script src="./assets/JS/main.js"></script>
-  <script>
-$(document).ready(function(){
-	$(window).scroll(function () {
-			if ($(this).scrollTop() > 50) {
-				$('#back-to-top').fadeIn();
-			} else {
-				$('#back-to-top').fadeOut();
-			}
-		});
-		// scroll body to 0px on click
-		$('#back-to-top').click(function () {
-			$('body,html').animate({
-				scrollTop: 0
-			}, 400);
-			return false;
-		});
-});
+  
   </script>
 </body>
 

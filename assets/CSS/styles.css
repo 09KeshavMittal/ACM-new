@@ -2378,3 +2378,13 @@ align-items: center; */
     flex-direction: column !important;
   }
 }
+
+#partnershipHead::after {
+  content:'';
+  height:2px;
+  width:20%;
+  background:#f24432;
+  position:absolute;
+  left:calc(50% - 10%);
+  bottom:-5px;
+}

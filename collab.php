@@ -261,12 +261,12 @@
       <div class="m-b-50" style="text-align: center;">
         <!-- <img style="width: 90px; margin-bottom: 5vh; " class="text-center" src="./assets/images/contact_us_icon.png"
           alt=""> -->
-        <p class="text section-heading h1" style=" color: #4169E1; font-weight: normal;"> <big> <b>Become Our Partner</b> </big></p>
+        <p class="text section-heading h1" style=" color: #4169E1; font-weight: normal;"> <big> <b style="border-bottom: 2px solid #4169E1;">Become Our Partner</b> </big></p>
         <p class="text-small" ></p>
       </div>
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
-          <img class=" contact-us-img m-t-20" width=100%; src="./assets/images/collab/sponsersContactUs.jpg"
+          <img class=" contact-us-img m-t-20" width=100%; src="./assets/images/collab/sponsersContactUs.jpeg"
             alt="contact us image">
         </div>
         <div class="col-lg-6">
@@ -304,7 +304,8 @@
             </div>
 
 
-              <label class="form-check-label h4" style="bottom: 150px;margin-bottom:6px; margin-top:10px; color: #4169E1;" > <b>Partnership</b> </label> <br>
+              <label class="form-check-label h4" style="bottom: 150px;margin-bottom:6px; margin-top:10px; color: #4169E1;" > <b id="partnershipHead" style="display:inline-block;
+  position:relative;">Partnership</b> </label> <br>
         
         
         
@@ -367,7 +368,7 @@
         <br>
             <div class="form-group">
               <textarea type="text" name="entry.1544463438" rows="5"
-                class="form-control form-input-boxes-manual required shadow" placeholder="What's your offer" style="color: grey;"
+                class="form-control form-input-boxes-manual required shadow" placeholder="What's your offer?" style="color: grey;"
                 aria-required="true"></textarea>
             </div>
             <div class="row">
